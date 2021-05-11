@@ -1,3 +1,5 @@
+import org.apache.commons.codec.digest.DigestUtils;
+
 import java.util.Date;
 
 public class Block {
@@ -31,6 +33,6 @@ public class Block {
     }
 
     private String calculateHash() {
-        return Sha256Util.applySha256(prevHash + timestamp + data);
+        return DigestUtils.sha256Hex(prevHash + timestamp + data);
     }
 }
