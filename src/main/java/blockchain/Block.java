@@ -1,3 +1,5 @@
+package blockchain;
+
 import org.apache.commons.codec.digest.DigestUtils;
 
 import java.util.Date;
@@ -32,7 +34,7 @@ public class Block {
         return data;
     }
 
-    private String calculateHash() {
+    protected String calculateHash() {
         return DigestUtils.sha256Hex(prevHash + timestamp + data);
     }
 }
